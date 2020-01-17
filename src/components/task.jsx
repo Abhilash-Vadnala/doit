@@ -1,4 +1,6 @@
 import React, {Component} from "react"
+import ToDoItem from './toDoItem'
+import List from './list'
 
 class Task extends Component {
     state = {
@@ -7,26 +9,28 @@ class Task extends Component {
         vacationSpots: ["Yosemite NP", "Grand Canyon", "Los Vegas"]
     };
 
+    VacationSpotsItems(vacationSpots) {
+        let str = "";
+        for (let index = 0; index < this.state.vacationSpots.length; index++) {
+           const element = vacationSpots[index];
+           str += `<li><input type="checkbox"/> <span>${element}</span></li>\n\t`;
+       }
+       return str;
+    };
+
     render() {
         return (
-            <div className = "task">
-            <h3>Hello {this.state.name}</h3>
-            <p>{this.state.description}</p>
-            <ul>
-                <VacationSpotsItems />
-            </ul>
+            <div className = "todo-list">
+                <p>{this.state.description}</p>
+                <ul>
+                    <List 
+                        name="Learnings"
+                    />
+                    <ToDoItem />
+                </ul>
             </div>
         )
     }
-}
-
-function VacationSpotsItems(vacationSpots) {
-    let str = "";
-    for (let index = 0; index < vacationSpots.length; index++) {
-       const element = vacationSpots[index];
-       str += `<li>${element}</li>`;
-   }
-   return str; 
 }
 
 export default Task;

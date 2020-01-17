@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import Task from './task'
+import User from './user'
 
 class Main extends Component {
     state = {};
@@ -7,6 +8,7 @@ class Main extends Component {
     render() {
         return (
             <main>
+                <User />
                 <Task />
             </main>
         );

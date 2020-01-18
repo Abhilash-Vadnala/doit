@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
 
 class ToDoItem extends Component {
-    state = {
-        itemDescription: "Learn React the right way",
-        flagged: false,
-        flag: 3
+    constructor() {
+        super()
+        this.state = {
+            completed: false
+        }
     }
 
-    flag() {
-        switch(this.state.flag) {
+    flag(x) {
+        switch(x) {
             case 1:
                 return <span>!</span>;
             case 2:
@@ -22,10 +23,17 @@ class ToDoItem extends Component {
 
     render() {
         return(
-            <li className="todoitem">
-                <input type="checkbox"/> 
-                <span>{this.state.itemDescription}</span>
-            </li>
+            <div>
+                <li className="todoitem">
+                    <input type="checkbox"/> 
+                    <span><strong>{this.flag(this.props.item.flag)}</strong></span>
+                    <span> {this.props.item.title}</span>
+                    <br/>
+                    <span> {this.props.item.description}</span>
+                </li>
+                <hr/>
+            </div>
+          
         );
     }
 }

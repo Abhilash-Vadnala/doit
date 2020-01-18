@@ -1,7 +1,10 @@
 import React, {Component} from "react"
 
 class Header extends Component {
-    state = {};
+    constructor() {
+        super()
+        this.state = {}
+    }
 
     render() {
         return (

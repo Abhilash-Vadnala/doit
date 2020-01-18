@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-function list(props) {
-    return(
-        <h3>{props.name}</h3>
-    );
+class List extends Component {
+    constructor() {
+        super()
+        this.state = {
+            
+        }
+    }
+
+    render() {
+        return(
+            <h3>{this.props.name}</h3>
+        );
+    }
 }
 
-export default list
+export default List

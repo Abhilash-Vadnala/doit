@@ -3,7 +3,12 @@ import Task from './task'
 import User from './user'
 
 class Main extends Component {
-    state = {};
+    constructor() {
+        super()
+        this.state = {
+            
+        }
+    }
 
     render() {
         return (

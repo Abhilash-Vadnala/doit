@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 
 class User extends Component {
-    state = {
-        name: "Abhilash Vadnala"
-    };
+    constructor() {
+        super()
+        this.state = {
+            name: "Abhilash Vadnala"
+        }
+    }
     
     wish() {
         const date = new Date()
